@@ -1,7 +1,7 @@
 #ddev-generated
 services:
-  server:
-    container_name: ddev-${DDEV_SITENAME}-server
+  typesense:
+    container_name: ddev-${DDEV_SITENAME}-typesense
     image: typesense/typesense:28.0
     command: '--data-dir /data --enable-cors'
     networks: [default, ddev_default]
@@ -25,9 +25,9 @@ services:
   # access the Typesense service at http://typesense:8108 or https://typesense:8109
   web:
     links:
-      - server:typesense
-  admin:
-    container_name: ddev-${DDEV_SITENAME}-admin
+      - typesense:typesense
+  typesensedashboard:
+    container_name: ddev-${DDEV_SITENAME}-typesensedashboard
     image: ghcr.io/bfritscher/typesense-dashboard:latest
     restart: always
     labels:
