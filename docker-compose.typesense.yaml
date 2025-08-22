@@ -2,7 +2,7 @@
 services:
   typesense:
     container_name: ddev-${DDEV_SITENAME}-typesense
-    image: typesense/typesense:28.0
+    image: typesense/typesense:${TYPESENSE_DOCKER_IMAGE_TAG:-28.0}
     command: '--data-dir /data --enable-cors'
     networks: [default, ddev_default]
     restart: "on-failure"

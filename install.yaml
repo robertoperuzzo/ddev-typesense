@@ -3,4 +3,4 @@ name: typesense
 project_files:
   - docker-compose.typesense.yaml
 
-ddev_version_constraint: '>= v1.24.2'
+ddev_version_constraint: '>= v1.24.3'
